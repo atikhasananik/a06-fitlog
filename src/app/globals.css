@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+* {
+   li{
+    font-family: var(--font-inter),sans-serif;
+   }
+    html {
+        font-family: var(--font-inter), sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: var(--font-oswald), sans-serif;
+    }
+}
+
+body::-webkit-scrollbar{
+    width: none;
+}
+
+
+
+:root {
+    --bg-main-color: #0C0D10;
+    --btn-main-bg-color: #C2F800;
+    --btn-sec-bg-color: #c2f800bb;
+
+}
