@@ -2,22 +2,24 @@
 
 @plugin "daisyui";
 
-* {
-   li{
-    font-family: var(--font-inter),sans-serif;
-   }
-    html {
-        font-family: var(--font-inter), sans-serif;
-    }
 
-    h1,
-    h2,
-    h3 {
-        font-family: var(--font-oswald), sans-serif;
-    }
+li {
+    font-family: var(--font-inter), sans-serif;
 }
 
-body::-webkit-scrollbar{
+h1,
+h2,
+h3 {
+    font-family: var(--font-oswald), sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-inter), sans-serif;
+}
+
+body::-webkit-scrollbar {
     width: none;
 }
 

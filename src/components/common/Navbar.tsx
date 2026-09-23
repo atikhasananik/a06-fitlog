@@ -1,10 +1,12 @@
-import React from "react";
+
 import logo from "@/assets/logo.png";
 import Image from "next/image";
-import NavLink from "../routing/NavLink";
+import NavLink from "../../routing/NavLink";
 import Link from "next/link";
 
+
 const Navbar = () => {
+  
   return (
     <nav className="navbar border-b border-b-slate-800 bg-black items-center justify-between px-10 py-6 shadow-sm">
       <div className="flex gap-3 items-center">
@@ -22,7 +24,7 @@ const Navbar = () => {
         <Link href={"/my-plan"}>
           <button className="hover:bg-[#c2f8003a] py-2 px-4 rounded-3xl transition-all duration-300">
             Plan{" "}
-            <span className=" outline-0 ml-1 border-0 bg-[#C2F800] text-black  font-bold  p-2 py-0.5 rounded-full ">
+            <span className=" outline-0 ml-1 border-0 bg-[#ccff00] text-black  font-bold w-2 h-2 p-2 py-0.5 rounded-full ">
               {0}
             </span>
           </button>
