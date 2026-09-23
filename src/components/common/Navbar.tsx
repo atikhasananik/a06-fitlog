@@ -20,7 +20,7 @@ const Navbar = () => {
 
       <NavLink />
 
-      <div className="flex items-center">
+      <div className="hidden sm:flex items-center">
         <Link href={"/my-plan"}>
           <button className="hover:bg-[#c2f8003a] py-2 px-4 rounded-3xl transition-all duration-300">
             Plan{" "}

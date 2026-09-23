@@ -4,7 +4,7 @@ import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <div className="flex justify-between items-center m-10 mt-30 border-t pt-10 border-gray-800">
+    <div className="flex justify-between max-sm:justify-center max-sm:flex-col items-center m-10 mt-10 sm:mt-30 border-t pt-10 border-gray-800">
       <div className="flex gap-3 items-center">
         <Image src={logo} alt="Fit Log logo"></Image>
         <h1>

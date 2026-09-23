@@ -9,14 +9,14 @@ const LibrarySection = async () => {
 
 
   return (
-    <div id="library" className="m-10 pt-5">
+    <div id="library" className="my-5 mx-2 sm:m-10 pt-5">
       <div>
         <h2 className="text-4xl font-bold tracking-wide ">The Library </h2>
         <p className="text-[#9CA3AF]">
           Twelve lifts covering every major muscle group.
         </p>
       </div>
-      <div className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-30">
+      <div className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 xl:px-30">
         {data.map((workout: IWorkoutCard) => {
           return <WorkoutCard key={workout.id} workout={workout}></WorkoutCard>;
         })}
