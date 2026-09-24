@@ -1,15 +1,13 @@
-import { IWorkoutCard } from "@/types/workoutCard.Type";
-import React, { Dispatch, ReactNode, SetStateAction, useState } from "react";
-import { createContext } from "react";
+"use client"
 
-interface Idata {
-  addedWorkoutCards: [] | IWorkoutCard[];
-  setAddedWorkoutCards: Dispatch<SetStateAction<[] | IWorkoutCard[]>>;
-  sevedWorkoutCards: [] | IWorkoutCard[];
-  setSevedWorkoutCards: Dispatch<SetStateAction<IWorkoutCard[]>>;
-}
+import { IContextAPIProps, IWorkoutCard } from "@/types/workoutCard.Type";
 
-export const ContextAPIWorkoutData = createContext<Idata | []>([]);
+import { createContext, ReactNode, useState } from "react";
+
+export const ContextAPIWorkoutData = createContext<IContextAPIProps | []>([]);
+
+
+
 
 const ContextAPIWorkoutDataProvider = ({
   children,
@@ -22,7 +20,7 @@ const ContextAPIWorkoutDataProvider = ({
   const [sevedWorkoutCards, setSevedWorkoutCards] = useState<
     IWorkoutCard[] | []
   >([]);
-  const data: Idata = {
+  const data: IContextAPIProps = {
     addedWorkoutCards,
     setAddedWorkoutCards,
     sevedWorkoutCards,

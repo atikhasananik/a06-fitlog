@@ -50,15 +50,7 @@ const Details = async ({ params }: IDetailsProps) => {
             <div></div>
           </div>
 
-          {/* <div className="relative h-full rounded-3xl overflow-hidden  border border-gray-800 shadow-2xl  ">
-            <Image
-              width={600}
-              height={900}
-              src={workoutCard.image}
-              alt="Barbell Bench Press"
-              className="w-full hover:scale-105 transition-all duration-500 h-full object-cover"
-            />
-          </div> */}
+         
         </div>
 
         <div className="flex flex-col space-y-6">
@@ -166,7 +158,7 @@ const Details = async ({ params }: IDetailsProps) => {
               })}
             </ol>
           </div>
-          <Button></Button>
+          <Button workoutCard= {workoutCard}></Button>
         </div>
       </div>
     </div>
