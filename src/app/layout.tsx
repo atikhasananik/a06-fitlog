@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/footer/Footer";
 import { ToastContainer } from "react-toastify";
+import ContextAPIWorkoutDataProvider from "@/context/ContextAPI.workoutData";
+
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -31,9 +33,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className={`${oswald.variable} ${inter.variable} h-full antialiased`}
       >
         <body className="min-h-full bg-black flex flex-col">
-          <Navbar></Navbar>
-          <div>{children}</div>
-          <Footer></Footer>
+          <ContextAPIWorkoutDataProvider>
+            <Navbar></Navbar>
+            <div>{children}</div>
+            <Footer></Footer>
+          </ContextAPIWorkoutDataProvider>
         </body>
       </html>
       <ToastContainer />
