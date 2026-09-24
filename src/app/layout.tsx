@@ -3,7 +3,7 @@ import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/footer/Footer";
-
+import { ToastContainer } from "react-toastify";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -11,9 +11,9 @@ const oswald = Oswald({
   variable: "--font-oswald",
 });
 
-const inter = Inter({ 
-  subsets: ["latin"], 
-  variable: "--font-inter" 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -24,16 +24,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      data-theme="dark"
-      className={`${oswald.variable} ${inter.variable} h-full antialiased`}
-    >
-      <body className="min-h-full bg-black flex flex-col">
-        <Navbar></Navbar>
-        <div>{children}</div>
-        <Footer></Footer>
-      </body>
-    </html>
+    <>
+      <html
+        lang="en"
+        data-theme="dark"
+        className={`${oswald.variable} ${inter.variable} h-full antialiased`}
+      >
+        <body className="min-h-full bg-black flex flex-col">
+          <Navbar></Navbar>
+          <div>{children}</div>
+          <Footer></Footer>
+        </body>
+      </html>
+      <ToastContainer />
+    </>
   );
 }
