@@ -1,13 +1,10 @@
-"use client"
+"use client";
 
 import { IContextAPIProps, IWorkoutCard } from "@/types/workoutCard.Type";
 
 import { createContext, ReactNode, useState } from "react";
 
 export const ContextAPIWorkoutData = createContext<IContextAPIProps | []>([]);
-
-
-
 
 const ContextAPIWorkoutDataProvider = ({
   children,

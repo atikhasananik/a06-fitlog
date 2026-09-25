@@ -1,3 +1,6 @@
+import MyPlanCountBar from "@/components/my-plain/MyPlanCountBar";
+import SelectedWorkoutCards from "@/components/my-plain/SelectedWorkoutCards";
+import TabBtn from "@/components/my-plain/TabBtn";
 import React from "react";
 
 const page = () => {
@@ -12,39 +15,10 @@ const page = () => {
         </p>
       </div>
 
-      <div className="stats stats-vertical grid  rounded-2xl m py-5 border border-gray-800 lg:stats-horizontal shadow">
-        <div className="stat">
-          <div className="stat-title">Exercises</div>
-          <div className="stat-value">31K</div>
-        </div>
-
-        <div className="stat">
-          <div className="stat-title">New Minutes</div>
-          <div className="stat-value">4,200</div>
-        </div>
-
-        <div className="stat">
-          <div className="stat-title">Calories</div>
-          <div className="stat-value">1,200</div>
-        </div>
-      </div>
+     <MyPlanCountBar></MyPlanCountBar>
 
       <div className="  flex justify-between items-center">
-        <div className="tabs p-2  inline-block  transition-all duration-300 tabs-box">
-          <input
-            type="radio"
-            name="my_tabs_1"
-            className="tab text-md transition-all duration-400 font-semibold checked:bg-[#2b303dcb] checked:text-primary-content"
-            aria-label="Today's Plan"
-            defaultChecked
-          />
-          <input
-            type="radio"
-            name="my_tabs_1"
-            className="tab text-md transition-all duration-400 font-semibold checked:bg-[#2b303dcb] checked:text-primary-content"
-            aria-label="Saved"
-          />
-        </div>
+        <TabBtn></TabBtn>
 
         <div className=" w-[30%] inline-flex justify-end items-center gap-4">
           <p className="text-gray-400">Sort By</p>
@@ -57,7 +31,9 @@ const page = () => {
           </select>
         </div>
       </div>
-      <div className="border  ">h</div>
+      <div className="border border-gray-800 rounded-3xl  p-5  ">
+        <SelectedWorkoutCards  ></SelectedWorkoutCards>
+      </div>
     </div>
   );
 };

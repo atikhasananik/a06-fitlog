@@ -5,7 +5,7 @@ import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/footer/Footer";
 import { ToastContainer } from "react-toastify";
 import ContextAPIWorkoutDataProvider from "@/context/ContextAPI.workoutData";
-
+import TabBtnDataProvider from "@/context/TabBtnContext";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -34,9 +34,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       >
         <body className="min-h-full bg-black flex flex-col">
           <ContextAPIWorkoutDataProvider>
-            <Navbar></Navbar>
-            <div>{children}</div>
-            <Footer></Footer>
+            <TabBtnDataProvider>
+              <Navbar></Navbar>
+              <div>{children}</div>
+              <Footer></Footer>
+            </TabBtnDataProvider>
           </ContextAPIWorkoutDataProvider>
         </body>
       </html>

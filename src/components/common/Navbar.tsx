@@ -1,12 +1,10 @@
-
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import NavLink from "../../routing/NavLink";
 import Link from "next/link";
-
+import NavLinkBtn from "@/routing/NavLinkBtn";
 
 const Navbar = () => {
-  
   return (
     <nav className="sticky top-0 z-100 navbar border-b border-b-slate-800 bg-black items-center justify-between px-10 py-6 shadow-sm">
       <div className="flex gap-3 items-center">
@@ -19,25 +17,7 @@ const Navbar = () => {
       </div>
 
       <NavLink />
-
-      <div className="hidden sm:flex items-center">
-        <Link href={"/my-plan"}>
-          <button className="hover:bg-[#c2f8003a] py-2 px-4 rounded-3xl transition-all duration-300">
-            Plan{" "}
-            <span className=" outline-0 ml-1 border-0 bg-[#ccff00] text-black  font-bold w-2 h-2 p-2 py-0.5 rounded-full ">
-              {0}
-            </span>
-          </button>
-        </Link>
-        <Link href={"/my-plan"}>
-          <button className="hover:bg-[#c2f8003a] py-2 px-4  rounded-3xl transition-all duration-300">
-            Saved{" "}
-            <span className=" outline-0 ml-1  border-gray-400 border  p-2 py-0.5 rounded-full font-bold ">
-              {0}
-            </span>
-          </button>
-        </Link>
-      </div>
+      <NavLinkBtn />
     </nav>
   );
 };

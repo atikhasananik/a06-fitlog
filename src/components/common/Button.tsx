@@ -11,7 +11,6 @@ interface IWorkoutCardProps {
 }
 
 const Button = ({ workoutCard }: IWorkoutCardProps) => {
- 
   const {
     addedWorkoutCards,
     sevedWorkoutCards,
@@ -22,10 +21,17 @@ const Button = ({ workoutCard }: IWorkoutCardProps) => {
   const [isSaved, setIsSaved] = useState<boolean>(false);
   const [isAdded, setIsAdded] = useState<boolean>(false);
 
+  const sevedExest = sevedWorkoutCards.find((card: IWorkoutCard) => {
+    return card.id === workoutCard.id;
+  });
+  const addExest = addedWorkoutCards.find((card: IWorkoutCard) => {
+    return card.id === workoutCard.id;
+  });
+
   const handleSavedBtn = (data: boolean) => {
     setIsSaved(data);
 
-    if (!isSaved) {
+    if (!isSaved && !sevedExest) {
       setSevedWorkoutCards([...sevedWorkoutCards, workoutCard]);
       toast.success("seved successfuly!");
     } else {
@@ -36,7 +42,7 @@ const Button = ({ workoutCard }: IWorkoutCardProps) => {
   const handleAddedBtn = (data: boolean) => {
     setIsAdded(data);
 
-    if (!isAdded) {
+    if (!isAdded && !addExest) {
       setAddedWorkoutCards([...addedWorkoutCards, workoutCard]);
       toast.success("Today's Plan added successfuly!");
     } else {
@@ -51,7 +57,7 @@ const Button = ({ workoutCard }: IWorkoutCardProps) => {
         className="flex-1 min-w-45 bg-[#c0fd12] hover:bg-[#b0eb0e] active:scale-[0.98] text-black font-semibold text-sm py-3 px-5 rounded-2xl flex items-center justify-center gap-2 transition-all"
       >
         <Calendar size={16} />
-        <span>{isAdded ? "Added!" : "Add to today's plan"}</span>
+        <span>{addExest ? "Added!" : "Add to today's plan"}</span>
       </button>
 
       <button
@@ -60,9 +66,9 @@ const Button = ({ workoutCard }: IWorkoutCardProps) => {
       >
         <Bookmark
           size={16}
-          className={isSaved ? "fill-[#c0fd12] text-[#c0fd12]" : ""}
+          className={sevedExest ? "fill-[#c0fd12] text-[#c0fd12]" : ""}
         />
-        <span>{isSaved ? "Saved" : "Save for later"}</span>
+        <span>{sevedExest ? "Saved" : "Save for later"}</span>
       </button>
     </div>
   );
