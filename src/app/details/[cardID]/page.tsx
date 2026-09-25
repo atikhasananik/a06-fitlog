@@ -1,4 +1,5 @@
 import Button from "@/components/common/Button";
+import OneStepBackBtn from "@/components/common/OneStepBackBtn";
 import { getData } from "@/lib/fetchAPI";
 import { IWorkoutCard } from "@/types/workoutCard.Type";
 import Image from "next/image";
@@ -25,7 +26,10 @@ const Details = async ({ params }: IDetailsProps) => {
   const workoutCard = (await res.json()) as IWorkoutCard;
 
   return (
-    <div className="min-h-screen  text-white flex items-center justify-center p-4 sm:p-8 lg:p-12 font-sans selection:bg-[#c0fd12] selection:text-black">
+    <div className="min-h-screen relative  text-white flex items-center justify-center p-4 sm:p-8 lg:p-12 font-sans selection:bg-[#c0fd12] selection:text-black">
+       <div className="absolute top-25 left-20">
+        <OneStepBackBtn></OneStepBackBtn>
+      </div>
       <div className="w-full h-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
         <div className="w-full h-full">
           <div className="hover-3d relative h-full rounded-3xl ">

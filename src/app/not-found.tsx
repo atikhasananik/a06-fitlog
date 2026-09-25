@@ -4,10 +4,15 @@ import { Home, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export default function NotFound() {
+
+
   return (
     <div className="min-h-screen bg-[#0e0f12] text-white flex items-center justify-center p-4 sm:p-6 lg:p-12 relative overflow-hidden font-sans selection:bg-[#c0fd12] selection:text-black">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#c0fd12]/10 rounded-full blur-[140px] transition-transform duration-700 ease-out" />
+        <div
+          className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-[#c0fd12]/10 rounded-full blur-[140px] transition-transform duration-700 ease-out"
+         
+        />
         <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#c0fd12]/5 rounded-full blur-[120px]" />
 
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />

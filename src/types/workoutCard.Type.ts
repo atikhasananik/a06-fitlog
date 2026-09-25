@@ -28,4 +28,12 @@ export type TSortType = "duration" | "caloriesBurned" | "rating";
 export interface ISortOptionProps {
   sortOption: TSortType;
   setsortOption: Dispatch<SetStateAction<TSortType>>;
+
+}
+
+export interface ItabDataProps {
+  tabData: "plan" | "saved";
+  setTabData: Dispatch<SetStateAction<"plan" | "saved">>;
+  isClicked: boolean;
+  setIsClicked: Dispatch<SetStateAction<boolean>>;
 }

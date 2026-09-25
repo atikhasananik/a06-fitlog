@@ -1,5 +1,7 @@
 "use client";
-import { ItabDataProps, tabBtnData } from "@/context/TabBtnContext";
+
+import { tabBtnData } from "@/context/TabBtnContext";
+import { ItabDataProps } from "@/types/workoutCard.Type";
 import React, { useContext } from "react";
 
 const TabBtn = () => {

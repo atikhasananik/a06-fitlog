@@ -10,21 +10,24 @@ const SortOption = () => {
   const handleOption = (dets: TSortType): void => {
     setsortOption(dets);
   };
-  console.log(sortOption);
+
   return (
     <select
       defaultValue={sortOption}
       className="select outline-0 border-0  w-auto inline-block min-w-25 font-semibold p-2"
     >
-      <option onClick={() => handleOption("duration")}
-        value="duration"
-        >Duration</option>
-      <option onClick={() => handleOption("caloriesBurned")}
+      <option onClick={() => handleOption("duration")} value="duration">
+        Duration
+      </option>
+      <option
+        onClick={() => handleOption("caloriesBurned")}
         value="caloriesBurned"
-        >Calories</option>
-      <option onClick={() => handleOption("rating")}
-        value="rating"
-        >Rating</option>
+      >
+        Calories
+      </option>
+      <option onClick={() => handleOption("rating")} value="rating">
+        Rating
+      </option>
     </select>
   );
 };

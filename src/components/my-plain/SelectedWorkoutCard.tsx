@@ -1,9 +1,12 @@
 import { IWorkoutCard } from "@/types/workoutCard.Type";
 import Image from "next/image";
 import Link from "next/link";
+import MarkAsDoneBtn from "../common/MarkAsDoneBtn";
+import SelectedCardDeleteBtn from "../common/SelectedCardDeleteBtn";
 
 interface ISelectedWorkoutCardProps {
   workout: IWorkoutCard;
+
 }
 
 export const SelectedWorkoutCard = ({ workout }: ISelectedWorkoutCardProps) => {
@@ -81,44 +84,15 @@ export const SelectedWorkoutCard = ({ workout }: ISelectedWorkoutCardProps) => {
 
       <div className="flex  mx-auto sm:mr-2 items-center gap-3 shrink-0 self-end sm:self-center">
         <Link href={`/details/${workout.id}`}>
-          <button className="border border-gray-700/80 hover:bg-gray-800/60 text-gray-200 font-semibold text-xs py-2.5 px-4 rounded-full transition-colors cursor-pointer">
+          <button className="border border-gray-700/80 hover:bg-gray-800/60 text-gray-200 font-semibold text-sm py-4 px-6 rounded-full transition-colors cursor-pointer">
             View Details
           </button>
         </Link>
 
-        <button className="bg-[#ccff00] hover:bg-[#b8e600] text-black font-extrabold text-xs py-2.5 px-4 rounded-full flex items-center gap-1.5 transition-colors cursor-pointer shadow-md">
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-          <span>Mark as Done</span>
-        </button>
+       <MarkAsDoneBtn></MarkAsDoneBtn>
 
-        {/* Remove/Close Button */}
-        <button className="text-gray-500 hover:text-gray-300 p-1.5 rounded-lg transition-colors cursor-pointer ml-1">
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
+       <SelectedCardDeleteBtn workout={workout}></SelectedCardDeleteBtn>
+        
       </div>
     </div>
   );

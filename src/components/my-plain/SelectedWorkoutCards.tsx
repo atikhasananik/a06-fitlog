@@ -1,7 +1,11 @@
 "use client";
 import { ContextAPIWorkoutData } from "@/context/ContextAPI.workoutData";
-import { ItabDataProps, tabBtnData } from "@/context/TabBtnContext";
-import { IContextAPIProps, ISortOptionProps } from "@/types/workoutCard.Type";
+import { tabBtnData } from "@/context/TabBtnContext";
+import {
+  IContextAPIProps,
+  ISortOptionProps,
+  ItabDataProps,
+} from "@/types/workoutCard.Type";
 import React, { useContext } from "react";
 import SelectedWorkoutCard from "./SelectedWorkoutCard";
 import Link from "next/link";
