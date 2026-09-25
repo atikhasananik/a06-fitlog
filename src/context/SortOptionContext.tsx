@@ -1,15 +1,6 @@
 "use client";
 import { ISortOptionProps, TSortType } from "@/types/workoutCard.Type";
-import React, {
-  createContext,
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  useState,
-} from "react";
-
-
-
+import React, { createContext, ReactNode, useState } from "react";
 
 export const SortOptionContextData = createContext<
   ISortOptionProps | "duration"

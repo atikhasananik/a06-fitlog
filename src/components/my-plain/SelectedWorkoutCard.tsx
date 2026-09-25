@@ -1,30 +1,25 @@
-import { IWorkoutCard } from '@/types/workoutCard.Type';
-import Image from 'next/image';
-import Link from 'next/link';
-
+import { IWorkoutCard } from "@/types/workoutCard.Type";
+import Image from "next/image";
+import Link from "next/link";
 
 interface ISelectedWorkoutCardProps {
   workout: IWorkoutCard;
 }
 
-export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
+export const SelectedWorkoutCard = ({ workout }: ISelectedWorkoutCardProps) => {
   return (
-    <div className="w-full  bg-[#16171d] border border-gray-800/80 rounded-2xl p-3 sm:p-4 flex flex-col bg-red lg:flex-row sm:items-center justify-between gap-4 text-white shadow-xl relative overflow-hidden">
-      
-      
-      <div className="flex sm:items-center gap-4 flex-1 flex-col md:flex-row  min-w-0">
-      
-        <div className="w-full  mx-auto h-40 sm:w-40 sm:h-36 rounded-xl overflow-hidden bg-gray-900 shrink-0">
+    <div className="w-full  bg-[#16171d] border border-gray-800/80 rounded-2xl p-3 sm:p-4 flex flex-col bg-red xl:flex-row justify-between  gap-4 text-white shadow-xl relative overflow-hidden">
+      <div className="flex gap-5 md:w-full  flex-1 flex-col sm:flex-row  sm:min-w-200">
+        <div className="w-full h-40 sm:w-40 sm:h-36 rounded-xl overflow-hidden bg-gray-900 shrink-0 max-sm:mx-auto">
           <Image
-          width={500}
-          height={500}
+            width={500}
+            height={500}
             src={workout.image}
             alt={workout.name}
-            className="w-full h-full object-cover"
+            className="w-full  h-full object-cover"
           />
         </div>
 
-       
         <div className="flex flex-col justify-center space-y-2 min-w-0">
           <h3 className="text-base sm:text-2xl md:text-5xl font-black uppercase tracking-tight text-white truncate">
             {workout.name}
@@ -33,9 +28,7 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
             {workout.equipment}
           </p>
 
-          
           <div className="flex items-center gap-4 text-gray-400 text-sm font-medium pt-1">
-           
             <div className="flex items-center gap-1.5">
               <svg
                 className="w-4 h-4 CCFF00"
@@ -53,12 +46,11 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
               <span>{workout.duration} min</span>
             </div>
 
-           
             <div className="flex items-center  text-gray-400 gap-1.5">
               <svg
                 className="w-5 h-5"
                 fill="none"
-                stroke='#CCFF00'
+                stroke="#CCFF00"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
@@ -67,7 +59,6 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
               <span>{workout.caloriesBurned} kcal</span>
             </div>
 
-           
             <div className="flex items-center gap-1.5">
               <svg
                 className="w-4 h-4 "
@@ -89,13 +80,12 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
       </div>
 
       <div className="flex  mx-auto sm:mr-2 items-center gap-3 shrink-0 self-end sm:self-center">
-    <Link href={`/details/${workout.id}`}>
-        <button className="border border-gray-700/80 hover:bg-gray-800/60 text-gray-200 font-semibold text-xs py-2.5 px-4 rounded-full transition-colors cursor-pointer">
-          View Details
-        </button>
-</Link>
+        <Link href={`/details/${workout.id}`}>
+          <button className="border border-gray-700/80 hover:bg-gray-800/60 text-gray-200 font-semibold text-xs py-2.5 px-4 rounded-full transition-colors cursor-pointer">
+            View Details
+          </button>
+        </Link>
 
-        
         <button className="bg-[#ccff00] hover:bg-[#b8e600] text-black font-extrabold text-xs py-2.5 px-4 rounded-full flex items-center gap-1.5 transition-colors cursor-pointer shadow-md">
           <svg
             className="w-4 h-4"
@@ -104,7 +94,11 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
             strokeWidth="3"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 13l4 4L19 7"
+            />
           </svg>
           <span>Mark as Done</span>
         </button>
@@ -118,11 +112,14 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
       </div>
-
     </div>
   );
 };
