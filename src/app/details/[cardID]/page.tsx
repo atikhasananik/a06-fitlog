@@ -21,7 +21,7 @@ const Details = async ({ params }: IDetailsProps) => {
 
   const res = await fetch(
     `https://api.abcz.workers.dev/api/fitlog/${Number(cardID)}`,
-  );
+  {cache:"force-cache"});
   const workoutCard = (await res.json()) as IWorkoutCard;
 
   return (

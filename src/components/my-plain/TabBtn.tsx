@@ -3,16 +3,14 @@ import { ItabDataProps, tabBtnData } from "@/context/TabBtnContext";
 import React, { useContext } from "react";
 
 const TabBtn = () => {
-  const {tabData, setTabData } = useContext(tabBtnData) as ItabDataProps;
+  const { tabData, setTabData } = useContext(tabBtnData) as ItabDataProps;
 
   const handelTabBtn = (dets: "plan" | "saved") => {
     setTabData(dets);
   };
 
-
-
   return (
-    <div className="tabs p-2  inline-block  transition-all duration-300 tabs-box">
+    <div className="tabs  inline-block  transition-all duration-300 tabs-box">
       <input
         onChange={() => {
           return handelTabBtn("plan");
@@ -21,7 +19,6 @@ const TabBtn = () => {
         name="my_tabs_1"
         className="tab text-md transition-all duration-400 font-semibold checked:bg-[#2b303dcb] checked:text-primary-content"
         aria-label="Today's Plan"
-        
         checked={tabData === "plan"}
       />
       <input

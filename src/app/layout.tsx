@@ -6,6 +6,7 @@ import Footer from "@/components/footer/Footer";
 import { ToastContainer } from "react-toastify";
 import ContextAPIWorkoutDataProvider from "@/context/ContextAPI.workoutData";
 import TabBtnDataProvider from "@/context/TabBtnContext";
+import SortOptionContext from "@/context/SortOptionContext";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -30,15 +31,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <html
         lang="en"
         data-theme="dark"
-        data-scroll-behavior="smooth"
         className={`${oswald.variable} ${inter.variable} h-full antialiased`}
       >
         <body className="min-h-full bg-black flex flex-col">
           <ContextAPIWorkoutDataProvider>
             <TabBtnDataProvider>
-              <Navbar></Navbar>
-              <div>{children}</div>
-              <Footer></Footer>
+              <SortOptionContext>
+                <Navbar></Navbar>
+                <div>{children}</div>
+                <Footer></Footer>
+              </SortOptionContext>
             </TabBtnDataProvider>
           </ContextAPIWorkoutDataProvider>
         </body>

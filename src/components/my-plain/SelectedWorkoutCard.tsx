@@ -1,5 +1,6 @@
 import { IWorkoutCard } from '@/types/workoutCard.Type';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 interface ISelectedWorkoutCardProps {
@@ -8,12 +9,12 @@ interface ISelectedWorkoutCardProps {
 
 export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
   return (
-    <div className="w-full bg-[#16171d] border border-gray-800/80 rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-white shadow-xl relative overflow-hidden">
+    <div className="w-full  bg-[#16171d] border border-gray-800/80 rounded-2xl p-3 sm:p-4 flex flex-col bg-red lg:flex-row sm:items-center justify-between gap-4 text-white shadow-xl relative overflow-hidden">
       
       
-      <div className="flex items-center gap-4 flex-1 min-w-0">
+      <div className="flex sm:items-center gap-4 flex-1 flex-col md:flex-row  min-w-0">
       
-        <div className="w-28 h-20 sm:w-40 sm:h-36 rounded-xl overflow-hidden bg-gray-900 shrink-0">
+        <div className="w-full  mx-auto h-40 sm:w-40 sm:h-36 rounded-xl overflow-hidden bg-gray-900 shrink-0">
           <Image
           width={500}
           height={500}
@@ -34,7 +35,7 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
 
           
           <div className="flex items-center gap-4 text-gray-400 text-sm font-medium pt-1">
-            {/* Duration */}
+           
             <div className="flex items-center gap-1.5">
               <svg
                 className="w-4 h-4 CCFF00"
@@ -52,7 +53,7 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
               <span>{workout.duration} min</span>
             </div>
 
-            {/* Calories */}
+           
             <div className="flex items-center  text-gray-400 gap-1.5">
               <svg
                 className="w-5 h-5"
@@ -66,7 +67,7 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
               <span>{workout.caloriesBurned} kcal</span>
             </div>
 
-            {/* Rating */}
+           
             <div className="flex items-center gap-1.5">
               <svg
                 className="w-4 h-4 "
@@ -87,14 +88,14 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
         </div>
       </div>
 
-      {/* Right Action Buttons */}
-      <div className="flex items-center gap-3 shrink-0 self-end sm:self-center">
-        {/* View Details Button */}
+      <div className="flex  mx-auto sm:mr-2 items-center gap-3 shrink-0 self-end sm:self-center">
+    <Link href={`/details/${workout.id}`}>
         <button className="border border-gray-700/80 hover:bg-gray-800/60 text-gray-200 font-semibold text-xs py-2.5 px-4 rounded-full transition-colors cursor-pointer">
           View Details
         </button>
+</Link>
 
-        {/* Mark as Done Button */}
+        
         <button className="bg-[#ccff00] hover:bg-[#b8e600] text-black font-extrabold text-xs py-2.5 px-4 rounded-full flex items-center gap-1.5 transition-colors cursor-pointer shadow-md">
           <svg
             className="w-4 h-4"
