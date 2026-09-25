@@ -10,36 +10,36 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
   return (
     <div className="w-full bg-[#16171d] border border-gray-800/80 rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-white shadow-xl relative overflow-hidden">
       
-      {/* Left Info Group (Thumbnail + Details) */}
+      
       <div className="flex items-center gap-4 flex-1 min-w-0">
-        {/* Thumbnail Image */}
-        <div className="w-28 h-20 sm:w-36 sm:h-20 rounded-xl overflow-hidden bg-gray-900 shrink-0">
+      
+        <div className="w-28 h-20 sm:w-40 sm:h-36 rounded-xl overflow-hidden bg-gray-900 shrink-0">
           <Image
-          width={400}
-          height={400}
+          width={500}
+          height={500}
             src={workout.image}
             alt={workout.name}
             className="w-full h-full object-cover"
           />
         </div>
 
-        {/* Text Details */}
-        <div className="flex flex-col justify-center space-y-1 min-w-0">
-          <h3 className="text-base sm:text-lg font-black uppercase tracking-tight text-white truncate">
+       
+        <div className="flex flex-col justify-center space-y-2 min-w-0">
+          <h3 className="text-base sm:text-2xl md:text-5xl font-black uppercase tracking-tight text-white truncate">
             {workout.name}
           </h3>
-          <p className="text-gray-400 text-xs font-medium truncate">
+          <p className="text-gray-400 text-sm font-medium truncate">
             {workout.equipment}
           </p>
 
-          {/* Stats Bar */}
-          <div className="flex items-center gap-4 text-gray-400 text-xs font-medium pt-1">
+          
+          <div className="flex items-center gap-4 text-gray-400 text-sm font-medium pt-1">
             {/* Duration */}
             <div className="flex items-center gap-1.5">
               <svg
-                className="w-4 h-4 text-gray-400"
+                className="w-4 h-4 CCFF00"
                 fill="none"
-                stroke="currentColor"
+                stroke="#CCFF00"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
@@ -53,10 +53,12 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
             </div>
 
             {/* Calories */}
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center  text-gray-400 gap-1.5">
               <svg
-                className="w-4 h-4 text-gray-400"
-                fill="currentColor"
+                className="w-5 h-5"
+                fill="none"
+                stroke='#CCFF00'
+                strokeWidth="2"
                 viewBox="0 0 24 24"
               >
                 <path d="M12 2c0 0-5 4-5 8.5C7 13.5 9.2 16 12 16s5-2.5 5-5.5C17 6 12 2 12 2z" />
@@ -67,9 +69,9 @@ export const SelectedWorkoutCard = ({ workout }:ISelectedWorkoutCardProps) => {
             {/* Rating */}
             <div className="flex items-center gap-1.5">
               <svg
-                className="w-4 h-4 text-gray-400"
+                className="w-4 h-4 "
                 fill="none"
-                stroke="currentColor"
+                stroke="#CCFF00"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >

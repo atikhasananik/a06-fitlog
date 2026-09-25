@@ -13,7 +13,7 @@ export interface ItabDataProps {
   setTabData: Dispatch<SetStateAction<"plan" | "saved">>;
 }
 
-export const tabBtnData = createContext<ItabDataProps|null>(null);
+export const tabBtnData = createContext<ItabDataProps|"plan">("plan");
 
 
 const TabBtnDataProvider = ({ children }: { children: ReactNode }) => {
