@@ -33,9 +33,9 @@ const Button = ({ workoutCard }: IWorkoutCardProps) => {
 
     if (!isSaved && !sevedExest) {
       setSevedWorkoutCards([...sevedWorkoutCards, workoutCard]);
-      toast.success("seved successfuly!");
+      toast.success("save for leter!");
     } else {
-      toast.warning("Already Seved!");
+      toast.warning("Already Saved!");
     }
   };
 
@@ -44,7 +44,7 @@ const Button = ({ workoutCard }: IWorkoutCardProps) => {
 
     if (!isAdded && !addExest) {
       setAddedWorkoutCards([...addedWorkoutCards, workoutCard]);
-      toast.success("Today's Plan added successfuly!");
+      toast.success("Added to the Today's Plan!");
     } else {
       toast.warning("Already Added Today's Plan!");
     }
