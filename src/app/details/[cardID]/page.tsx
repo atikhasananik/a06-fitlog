@@ -27,7 +27,7 @@ const Details = async ({ params }: IDetailsProps) => {
 
   return (
     <div className="min-h-screen relative  text-white flex items-center justify-center p-4 sm:p-8 lg:p-12 font-sans selection:bg-[#c0fd12] selection:text-black">
-       <div className="absolute top-25 left-20">
+       <div className="absolute z-50 top-25 left-20">
         <OneStepBackBtn></OneStepBackBtn>
       </div>
       <div className="w-full h-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
