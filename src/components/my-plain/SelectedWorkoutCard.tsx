@@ -6,7 +6,6 @@ import SelectedCardDeleteBtn from "../common/SelectedCardDeleteBtn";
 
 interface ISelectedWorkoutCardProps {
   workout: IWorkoutCard;
-
 }
 
 export const SelectedWorkoutCard = ({ workout }: ISelectedWorkoutCardProps) => {
@@ -89,10 +88,10 @@ export const SelectedWorkoutCard = ({ workout }: ISelectedWorkoutCardProps) => {
           </button>
         </Link>
 
-       <MarkAsDoneBtn></MarkAsDoneBtn>
-
-       <SelectedCardDeleteBtn workout={workout}></SelectedCardDeleteBtn>
+        <MarkAsDoneBtn workout={workout.id}></MarkAsDoneBtn>
         
+
+        <SelectedCardDeleteBtn workout={workout}></SelectedCardDeleteBtn>
       </div>
     </div>
   );

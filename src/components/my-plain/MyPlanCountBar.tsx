@@ -1,8 +1,8 @@
 "use client";
 
 import { ContextAPIWorkoutData } from "@/context/ContextAPI.workoutData";
-import { ItabDataProps, tabBtnData } from "@/context/TabBtnContext";
-import { IContextAPIProps} from "@/types/workoutCard.Type";
+import { tabBtnData } from "@/context/TabBtnContext";
+import { IContextAPIProps, ItabDataProps} from "@/types/workoutCard.Type";
 import React, { useContext } from "react";
 
 const MyPlanCountBar = () => {

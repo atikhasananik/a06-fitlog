@@ -34,6 +34,11 @@ export interface ISortOptionProps {
 export interface ItabDataProps {
   tabData: "plan" | "saved";
   setTabData: Dispatch<SetStateAction<"plan" | "saved">>;
-  isClicked: boolean;
-  setIsClicked: Dispatch<SetStateAction<boolean>>;
+  isClicked: number[];
+  setIsClicked: Dispatch<SetStateAction<number[]>>;
+}
+
+
+export interface IcardArrProps {
+  workout: IWorkoutCard;
 }

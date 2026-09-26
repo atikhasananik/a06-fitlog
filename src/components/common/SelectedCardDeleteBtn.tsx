@@ -2,15 +2,14 @@
 import { ContextAPIWorkoutData } from "@/context/ContextAPI.workoutData";
 import { tabBtnData } from "@/context/TabBtnContext";
 import {
+  IcardArrProps,
   IContextAPIProps,
   ItabDataProps,
-  IWorkoutCard,
 } from "@/types/workoutCard.Type";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
-interface IcardArrProps {
-  workout: IWorkoutCard;
-}
+
 
 const SelectedCardDeleteBtn = ({ workout }: IcardArrProps) => {
   const { tabData } = useContext(tabBtnData) as ItabDataProps;
@@ -28,12 +27,14 @@ const SelectedCardDeleteBtn = ({ workout }: IcardArrProps) => {
       });
 
       setAddedWorkoutCards(newCardArr);
+      toast.success("Successfully remove")
     } else {
       const newCardArr = sevedWorkoutCards.filter((card) => {
         return card.id !== workout.id;
       });
 
       setSevedWorkoutCards(newCardArr);
+      toast.success("Successfully remove")
     }
   };
 

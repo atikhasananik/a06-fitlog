@@ -1,16 +1,27 @@
 "use client";
+
 import { tabBtnData } from "@/context/TabBtnContext";
 import { ItabDataProps } from "@/types/workoutCard.Type";
-import React, { useContext} from "react";
+import React, { useContext } from "react";
+import { toast } from "react-toastify";
 
-const MarkAsDoneBtn = () => {
-  const { isClicked, setIsClicked } = useContext(tabBtnData) as ItabDataProps;
+const MarkAsDoneBtn = ({ workout }: { workout: number }) => {
+  const { isClicked, setIsClicked ,tabData} = useContext(tabBtnData) as ItabDataProps;
+  const exest = isClicked.includes(workout);
+  const handleMarkBtn = () => {
+    if (!exest) {
+      const newArr = [...isClicked,workout];
+      setIsClicked(newArr);
+      toast.success("successfully done")
+    }
+  };
+
   return (
     <button
-      onClick={() => setIsClicked(true)}
-      className="bg-[#ccff00] hover:bg-[#b8e600] text-black font-extrabold text-sm py-4 px-6  rounded-full flex items-center gap-1.5 transition-colors cursor-pointer shadow-md"
+      onClick={() => handleMarkBtn()}
+      className={`bg-[#ccff00] hover:bg-[#b8e600] text-black font-extrabold text-sm ${tabData==="saved"&&"hidden"} py-4 px-6  rounded-full flex items-center gap-1.5 transition-colors cursor-pointer shadow-md`}
     >
-      <span className={`${isClicked ? "block" : "hidden"}`}>
+      <span className={`${exest ? "block" : "hidden"}`}>
         <svg
           className={`w-4 h-4 `}
           fill="none"

@@ -15,7 +15,8 @@ h3 {
 
 
 html {
-scroll-behavior: smooth;
+    overflow-y: auto;
+    scroll-behavior: smooth;
     font-family: var(--font-inter), sans-serif;
 }
 
